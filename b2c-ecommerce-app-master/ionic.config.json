@@ -1,0 +1,7 @@
+{
+  "name": "b2c-ecommerce-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

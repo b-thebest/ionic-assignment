@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="light">
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>eCommerce</ion-title>    
+
+    <ion-buttons slot="secondary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="cart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <ng-container *ngIf="products">
+    <ion-list *ngFor="let product of products.data">
+      <ion-item href="/home/{{product.id}}" detail>
+        <ion-thumbnail class="ion-margin-end">
+          <ion-img src="{{product.image}}"></ion-img>
+        </ion-thumbnail>
+        <ion-label class="ion-text-wrap">{{product.name}}</ion-label>
+        <ion-label>{{product.price}}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ng-container>
+</ion-content>

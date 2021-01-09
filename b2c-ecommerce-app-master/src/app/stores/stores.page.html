@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-menu-button autoHide="false" class="ion-margin-end"></ion-menu-button>
+    <ion-title class="label2">Stores</ion-title>  
+     
+  </ion-buttons>
+  <ion-item href="home">
+    <ion-buttons slot="end">
+      <ion-icon name="home" href></ion-icon>
+    </ion-buttons>
+  </ion-item>
+  
+</ion-toolbar>
+</ion-header>
+
+ <ion-content color="primary">
+  
+  
+   <ng-container *ngIf="stores">
+   
+    <ion-list *ngFor="let store of stores.data">
+      <ion-item href="/stores/{{store.id}}" detail class="label">
+          
+          <ion-label>{{store.name}}</ion-label>
+          <ion-label class="ion-text-wrap" slot="end">{{store.address}}</ion-label>
+
+      </ion-item>
+    </ion-list> 
+   
+   </ng-container>
+ </ion-content>
